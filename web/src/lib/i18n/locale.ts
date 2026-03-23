@@ -6,9 +6,24 @@ import settings from '$lib/state/settings';
 import { device } from '$lib/device';
 import { INTERNAL_locale, defaultLocale } from '$lib/i18n/translations';
 
-const isValid = (lang: string) => (
-    Object.keys(languages).includes(lang)
-);
+const supportedLocales = Object.keys(languages);
+
+const resolveLocale = (lang: string): string | undefined => {
+    if (supportedLocales.includes(lang)) return lang;
+
+    const lower = lang.toLowerCase();
+    const match = supportedLocales.find(
+        (l: string) => l.toLowerCase() === lower
+    );
+    if (match) return match;
+
+    const prefix = lower.split('-')[0];
+    return supportedLocales.find(
+        (l: string) => l.toLowerCase().startsWith(prefix + '-')
+    ) ?? supportedLocales.find(
+        (l: string) => l.toLowerCase() === prefix
+    );
+};
 
 export default derived(
     settings,
@@ -16,13 +31,11 @@ export default derived(
         let currentLocale = defaultLocale;
 
         if ($settings.appearance.autoLanguage) {
-            if (isValid(device.prefers.language)) {
-                currentLocale = device.prefers.language;
-            }
+            const resolved = resolveLocale(device.prefers.language);
+            if (resolved) currentLocale = resolved;
         } else {
-            if (isValid($settings.appearance.language)) {
-                currentLocale = $settings.appearance.language;
-            }
+            const resolved = resolveLocale($settings.appearance.language);
+            if (resolved) currentLocale = resolved;
         }
 
         INTERNAL_locale.set(currentLocale);

@@ -1,0 +1,161 @@
+{
+    "page.appearance": "外观",
+    "page.privacy": "隐私",
+    "page.video": "视频",
+    "page.audio": "音频",
+    "page.metadata": "元数据",
+    "page.advanced": "高级",
+    "page.debug": "调试信息",
+    "page.instances": "实例",
+    "page.local": "本地处理",
+    "page.accessibility": "无障碍",
+
+    "theme": "主题",
+    "theme.auto": "自动",
+    "theme.light": "浅色",
+    "theme.dark": "深色",
+    "theme.description": "自动主题会根据你设备的显示模式在浅色和深色主题之间切换。",
+
+    "video.quality": "视频质量",
+    "video.quality.max": "8k+",
+    "video.quality.2160": "4k",
+    "video.quality.1440": "1440p",
+    "video.quality.1080": "1080p",
+    "video.quality.720": "720p",
+    "video.quality.480": "480p",
+    "video.quality.360": "360p",
+    "video.quality.240": "240p",
+    "video.quality.144": "144p",
+    "video.quality.description": "如果首选的视频质量不可用，将自动选择次优质量。",
+
+    "video.youtube.codec": "首选 YouTube 视频编解码器",
+    "video.youtube.codec.description": "h264：兼容性最好，画质中等，最高支持 1080p。\nav1：画质和效率最佳，支持 8k 和 HDR。\nvp9：画质与 av1 相同，但文件大约大 2 倍，支持 4k 和 HDR。\n\nav1 和 vp9 的兼容性较差，你可能需要使用额外的软件来播放/编辑。如果首选编解码器不可用，cobalt 会自动选择次优编解码器。",
+
+    "video.youtube.container": "YouTube 文件容器",
+    "video.youtube.container.description": "选择「自动」时，cobalt 会根据所选编解码器自动选择最佳容器：h264 用 mp4；vp9/av1 用 webm。",
+
+    "video.youtube.hls": "YouTube HLS 格式",
+    "video.youtube.hls.title": "优先使用 HLS 下载视频和音频",
+    "video.youtube.hls.description": "此模式下仅支持 h264 和 vp9 编解码器。原始音频编解码器为 aac，会为兼容性进行重新编码，音质可能略低于非 HLS 版本。\n\n此选项为实验性功能，未来可能会被移除或更改。",
+
+    "video.twitter.gif": "Twitter/X",
+    "video.twitter.gif.title": "将循环视频转换为 GIF",
+    "video.twitter.gif.description": "GIF 转换效率较低，转换后的文件可能会很大且质量较低。",
+
+    "video.h265": "高效视频编解码器",
+    "video.h265.title": "允许视频使用 h265",
+    "video.h265.description": "允许以更高质量从 TikTok 和小红书等平台下载视频，但会降低兼容性。",
+
+    "audio.format": "音频格式",
+    "audio.format.best": "最佳",
+    "audio.format.mp3": "mp3",
+    "audio.format.ogg": "ogg",
+    "audio.format.wav": "wav",
+    "audio.format.opus": "opus",
+    "audio.format.description": "除「最佳」外的所有格式都是从源格式转换而来的，会有一些质量损失。选择「最佳」格式时，音频会尽可能保持原始格式。",
+
+    "audio.bitrate": "音频比特率",
+    "audio.bitrate.kbps": "kb/s",
+    "audio.bitrate.description": "比特率仅在将音频转换为有损格式时生效。cobalt 无法提升源音频质量，因此选择超过 128kbps 的比特率可能只会增大文件体积而没有可感知的音质差异。不同格式的感知质量可能有所不同。",
+
+    "audio.youtube.dub": "YouTube 音轨",
+    "audio.youtube.dub.title": "首选配音语言",
+    "audio.youtube.dub.description": "如果所选语言有配音音轨，cobalt 会优先使用。如果没有，将使用原始音轨。",
+    "youtube.dub.original": "原始",
+
+    "subtitles": "字幕",
+    "subtitles.title": "首选字幕语言",
+    "subtitles.description": "如果有首选语言的字幕，cobalt 会将其添加到下载文件中。\n\n某些服务没有语言选择，如果是这种情况，只要你选择了任意语言，cobalt 就会添加唯一可用的字幕轨道。",
+    "subtitles.none": "无",
+
+    "audio.youtube.better_audio": "YouTube 音频质量",
+    "audio.youtube.better_audio.title": "优先选择更高质量",
+    "audio.youtube.better_audio.description": "cobalt 会尝试在音频模式下选择最高质量的音频。这取决于 YouTube 的响应、当前流量和服务器状态，可能并不总是可用。自定义实例可能不支持此选项。",
+
+    "audio.tiktok.original": "TikTok",
+    "audio.tiktok.original.title": "下载原始声音",
+    "audio.tiktok.original.description": "cobalt 将下载视频中未经发布者修改的原始声音。",
+
+    "metadata.filename": "文件名样式",
+    "metadata.filename.classic": "经典",
+    "metadata.filename.basic": "基础",
+    "metadata.filename.pretty": "美观",
+    "metadata.filename.nerdy": "极客",
+    "metadata.filename.description": "文件名样式仅适用于通过 cobalt 隧道传输的文件。某些服务不支持经典以外的文件名样式。",
+
+    "metadata.filename.preview.video": "视频标题 - 视频作者",
+    "metadata.filename.preview.audio": "音频标题 - 音频作者",
+    "filename.preview_desc.video": "视频文件预览",
+    "filename.preview_desc.audio": "音频文件预览",
+
+    "metadata.file": "文件元数据",
+    "metadata.disable.title": "禁用文件元数据",
+    "metadata.disable.description": "标题、艺术家和其他信息将不会被添加到文件中。",
+
+    "saving.title": "保存方式",
+    "saving.ask": "询问",
+    "saving.download": "下载",
+    "saving.share": "分享",
+    "saving.copy": "复制",
+    "saving.description": "从 cobalt 保存文件或链接的首选方式。如果首选方式不可用或出了问题，cobalt 会询问你下一步该怎么做。",
+
+    "accessibility.visual": "视觉",
+    "accessibility.haptics": "触觉反馈",
+    "accessibility.behavior": "行为",
+
+    "accessibility.transparency.title": "降低视觉透明度",
+    "accessibility.transparency.description": "降低界面的透明度并禁用所有模糊效果。在性能较弱的设备上可能还会提升界面性能。",
+    "accessibility.motion.title": "减少动画",
+    "accessibility.motion.description": "尽可能禁用动画和过渡效果。",
+    "accessibility.haptics.title": "禁用触觉反馈",
+    "accessibility.haptics.description": "所有触觉反馈效果将被禁用。",
+    "accessibility.auto_queue.title": "不自动打开队列",
+    "accessibility.auto_queue.description": "当新项目添加到处理队列时，不会自动打开。进度仍然会显示，你仍然可以手动打开。",
+
+    "language": "语言",
+    "language.auto.title": "自动选择",
+    "language.auto.description": "cobalt 会使用你浏览器的默认语言（如果有对应翻译）。如果没有，将使用英语。",
+    "language.preferred.title": "首选语言",
+    "language.preferred.description": "禁用自动选择时将使用此语言。未翻译的文本将以英语显示。\n\n某些语言使用社区来源的翻译，可能不够准确或完整。",
+
+    "privacy.analytics": "匿名流量分析",
+    "privacy.analytics.title": "不参与分析",
+    "privacy.analytics.description": "匿名流量分析用于获取 cobalt 活跃用户的大致数量。关于你的任何可识别信息都不会被存储。所有处理的数据都是匿名和聚合的。\n\n我们使用自托管的 Plausible 实例，不使用 cookie，完全符合 GDPR、CCPA 和 PECR。",
+    "privacy.analytics.learnmore": "了解更多关于 Plausible 对隐私保护的承诺。",
+
+    "privacy.tunnel": "隧道",
+    "privacy.tunnel.title": "始终使用隧道传输文件",
+    "privacy.tunnel.description": "cobalt 将隐藏你的 IP 地址、浏览器信息，并绕过本地网络限制。启用后，文件还将拥有可读的文件名，否则文件名可能是乱码。",
+
+    "advanced.debug": "调试",
+    "advanced.debug.title": "启用调试功能",
+    "advanced.debug.description": "让你方便地查看可用于调试的应用信息。启用此功能不会影响 cobalt 的任何功能。",
+
+    "processing.community": "社区实例",
+    "processing.enable_custom.title": "使用自定义处理服务器",
+    "processing.enable_custom.description": "cobalt 将使用你选择的自定义处理实例。虽然 cobalt 有一些安全措施，但我们不对通过社区实例造成的任何损害负责，因为我们无法控制它们。\n\n请谨慎选择使用的实例，确保它们由你信任的人托管。",
+
+    "processing.access_key": "实例访问密钥",
+    "processing.access_key.title": "使用实例访问密钥",
+    "processing.access_key.description": "cobalt 将使用此密钥向处理实例发送请求，而非使用其他认证方式。请确保实例支持 API 密钥！",
+
+    "processing.custom_instance.input.alt_text": "自定义实例域名",
+    "processing.access_key.input.alt_text": "UUID 访问密钥",
+
+    "advanced.settings_data": "设置数据",
+    "advanced.local_storage": "本地存储",
+
+    "local.saving": "本地媒体处理",
+    "local.saving.description": "下载媒体时，转封装和转码将在设备上完成，而非在云端。你可以在处理队列中查看详细进度。\n\n禁用：不使用本地处理。处理实例可能强制使用本地处理，因此此选项可能无效。\n首选：需要额外处理的媒体将通过处理队列下载，其余媒体将由浏览器的下载管理器下载。\n强制：所有媒体将始终通过处理队列代理和下载。\n\n设备端专属功能不受此设置影响，它们始终在本地运行。",
+    "local.saving.disabled": "禁用",
+    "local.saving.preferred": "首选",
+    "local.saving.forced": "强制",
+
+    "local.webcodecs": "WebCodecs",
+    "local.webcodecs.title": "使用 WebCodecs 进行设备端处理",
+    "local.webcodecs.description": "在解码或编码文件时，cobalt 会尝试使用 WebCodecs。此功能支持 GPU 加速的媒体处理，使所有解码和编码速度大大加快。\n\n此功能的可用性和稳定性取决于你的设备和浏览器的能力。可能会出现问题或无法正常工作。",
+
+    "tabs": "导航",
+    "tabs.hide_remux": "隐藏转封装标签",
+    "tabs.hide_remux.description": "如果你不使用转封装工具，可以将其从导航栏中隐藏。"
+}

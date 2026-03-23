@@ -1,0 +1,8 @@
+{
+    "bullet.purpose.title": "转封装有什么用？",
+    "bullet.purpose.description": "转封装可以修复文件容器的问题，例如缺少时间信息。它有助于提高与旧软件（如 Vegas Pro 和 Windows Media Player）的兼容性。",
+    "bullet.explainer.title": "它是如何工作的？",
+    "bullet.explainer.description": "转封装提取现有的编解码器数据，并将其复制到新的媒体容器中。这是无损的，媒体数据不会被重新编码。",
+    "bullet.privacy.title": "设备端处理",
+    "bullet.privacy.description": "cobalt 在本地进行转封装。文件不会离开你的设备，因此处理几乎是即时的。"
+}

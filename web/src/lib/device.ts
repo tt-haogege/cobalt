@@ -71,7 +71,7 @@ if (browser) {
     };
 
     device.prefers = {
-        language: navigator.language.toLowerCase().slice(0, 2) || "en",
+        language: navigator.language || "en",
         reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
         reducedTransparency: window.matchMedia('(prefers-reduced-transparency: reduce)').matches,
     };
