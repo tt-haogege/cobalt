@@ -53,6 +53,18 @@ function aliasURL(url) {
             }
             break;
 
+        case "iesdouyin":
+            if (services.douyin.altDomains.includes(host.domain)) {
+                url.hostname = 'www.douyin.com';
+            }
+            break;
+
+        case "toutiao":
+            if (parts.length >= 3 && parts[1] === 'is') {
+                url = new URL(`https://www.douyin.com/_toutiao/${parts[2]}`);
+            }
+            break;
+
         case "bilibili":
             if (host.tld === 'tv') {
                 url = new URL(`https://bilibili.com/_tv${url.pathname}`);
@@ -161,6 +173,11 @@ function cleanURL(url) {
         case "xiaohongshu":
             if (url.searchParams.get('xsec_token')) {
                 limitQuery('xsec_token');
+            }
+            break;
+        case "douyin":
+            if (url.searchParams.get('modal_id')) {
+                limitQuery('modal_id');
             }
             break;
     }

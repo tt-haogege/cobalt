@@ -104,6 +104,7 @@ export default function({
                 case "snapchat":
                 case "bsky":
                 case "xiaohongshu":
+                case "douyin":
                     params = { picker: r.picker };
                     break;
 
@@ -181,6 +182,7 @@ export default function({
                 case "ok":
                 case "xiaohongshu":
                 case "newgrounds":
+                case "douyin":
                     params = { type: "proxy" };
                     break;
 

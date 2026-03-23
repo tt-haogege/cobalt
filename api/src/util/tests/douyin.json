@@ -1,0 +1,97 @@
+[
+    {
+        "name": "standard video link",
+        "url": "https://www.douyin.com/video/7253815894357363979",
+        "canFail": true,
+        "params": {},
+        "expected": {
+            "code": 200,
+            "status": "tunnel"
+        }
+    },
+    {
+        "name": "discover with modal_id",
+        "url": "https://www.douyin.com/discover?modal_id=7255485257351269644",
+        "canFail": true,
+        "params": {},
+        "expected": {
+            "code": 200,
+            "status": "tunnel"
+        }
+    },
+    {
+        "name": "jingxuan with modal_id",
+        "url": "https://www.douyin.com/jingxuan?modal_id=7598721502556762481",
+        "canFail": true,
+        "params": {},
+        "expected": {
+            "code": 200,
+            "status": "tunnel"
+        }
+    },
+    {
+        "name": "user page with modal_id",
+        "url": "https://www.douyin.com/user/MS4wLjABAAAAtTYwVs6WsKHTE8x-Pa1KBh16yYipeUhR0nCVuimvnlg?modal_id=7280076629513178409",
+        "canFail": true,
+        "params": {},
+        "expected": {
+            "code": 200,
+            "status": "tunnel"
+        }
+    },
+    {
+        "name": "short link (v.douyin.com)",
+        "url": "https://v.douyin.com/ieYvXhHW",
+        "canFail": true,
+        "params": {},
+        "expected": {
+            "code": 200,
+            "status": "picker"
+        }
+    },
+    {
+        "name": "deleted video (iesdouyin share)",
+        "url": "https://www.iesdouyin.com/share/video/7267477691337624895/",
+        "params": {},
+        "expected": {
+            "code": 400,
+            "status": "error"
+        }
+    },
+    {
+        "name": "unavailable note",
+        "url": "https://www.douyin.com/note/7268533075569642804",
+        "params": {},
+        "expected": {
+            "code": 400,
+            "status": "error"
+        }
+    },
+    {
+        "name": "deleted shipin",
+        "url": "https://www.douyin.com/shipin/7268349129347172371",
+        "params": {},
+        "expected": {
+            "code": 400,
+            "status": "error"
+        }
+    },
+    {
+        "name": "expired toutiao short link",
+        "url": "https://m.toutiao.com/is/iLYnuMRG",
+        "params": {},
+        "expected": {
+            "code": 400,
+            "status": "error"
+        }
+    },
+    {
+        "name": "expired jx.douyin.com short link",
+        "url": "https://jx.douyin.com/iLxdnwwN",
+        "params": {},
+        "expected": {
+            "code": 400,
+            "status": "error"
+        }
+    }
+]

@@ -1,5 +1,6 @@
 const friendlyNames = {
     bsky: "bluesky",
+    douyin: "抖音",
     twitch: "twitch clips"
 }
 

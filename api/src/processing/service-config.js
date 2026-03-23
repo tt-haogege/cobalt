@@ -4,6 +4,21 @@ export const audioIgnore = new Set(["vk", "ok", "loom"]);
 export const hlsExceptions = new Set(["dailymotion", "vimeo", "rutube", "bsky", "youtube"]);
 
 export const services = {
+    douyin: {
+        patterns: [
+            "video/:id",
+            "note/:id",
+            "shipin/:id",
+            "share/video/:id",
+            "discover?modal_id=:id",
+            "jingxuan?modal_id=:id",
+            "user/:userId?modal_id=:id",
+            "_toutiao/:toutiao",
+            ":shortLink",
+        ],
+        subdomains: ["v", "jx", "m"],
+        altDomains: ["iesdouyin.com"],
+    },
     bilibili: {
         patterns: [
             "video/:comId",
