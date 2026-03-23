@@ -38,7 +38,7 @@ jobs:
             type=raw,value=${{ steps.release-meta.outputs.version }}
             type=raw,value=${{ steps.release-meta.outputs.major_version }}
             type=raw,value=${{ steps.release-meta.outputs.version }}-${{ steps.release-meta.outputs.commit_short }}
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/cobalt
+          images: nasqdz/cobalt
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6

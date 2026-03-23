@@ -10,17 +10,24 @@ RUN corepack enable
 RUN apk add --no-cache python3 alpine-sdk
 
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
-    pnpm install --prod --frozen-lockfile
+    pnpm install --frozen-lockfile
+
+RUN cd web && WEB_DEFAULT_API="http://127.0.0.1/" pnpm run build
 
 RUN pnpm deploy --filter=@imput/cobalt-api --prod /prod/api
 
-FROM base AS api
+FROM base
 WORKDIR /app
 
-COPY --from=build --chown=node:node /prod/api /app
-COPY --from=build --chown=node:node /app/.git /app/.git
+RUN apk add --no-cache nginx
 
-USER node
+COPY --from=build /prod/api /app/api
+COPY --from=build /app/.git /app/.git
+COPY --from=build /app/web/build /app/web
 
-EXPOSE 9000
-CMD [ "node", "src/cobalt" ]
+COPY nginx.conf /etc/nginx/http.d/default.conf
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+EXPOSE 80
+ENTRYPOINT ["/entrypoint.sh"]

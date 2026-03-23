@@ -3,7 +3,7 @@ import { get } from "svelte/store";
 import settings from "$lib/state/settings";
 
 import { getSession, resetSession } from "$lib/api/session";
-import { currentApiURL } from "$lib/api/api-url";
+import { currentApiURL, rewriteTunnelUrl } from "$lib/api/api-url";
 import { turnstileEnabled, turnstileSolved } from "$lib/state/turnstile";
 import cachedInfo from "$lib/state/server-info";
 import { getServerInfo } from "$lib/api/server-info";
@@ -124,6 +124,22 @@ const request = async (requestBody: CobaltSaveRequestBody, justRetried = false) 
         resetSession();
         await getAuthorization();
         return request(requestBody, true);
+    }
+
+    if (response && 'url' in response) {
+        response.url = rewriteTunnelUrl(response.url);
+    }
+    if (response && 'audio' in response && response.audio) {
+        response.audio = rewriteTunnelUrl(response.audio);
+    }
+    if (response && 'picker' in response && response.picker) {
+        response.picker = response.picker.map(item => ({
+            ...item,
+            url: rewriteTunnelUrl(item.url),
+        }));
+    }
+    if (response && 'tunnel' in response && response.tunnel) {
+        response.tunnel = response.tunnel.map(rewriteTunnelUrl);
     }
 
     return response;
