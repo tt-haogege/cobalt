@@ -18,12 +18,23 @@ export const currentApiURL = () => {
     return new URL(env.DEFAULT_API!).origin;
 }
 
+const loopbackHosts = new Set([
+    '127.0.0.1',
+    'localhost',
+    '[::1]',
+]);
+
 export const rewriteTunnelUrl = (url: string): string => {
     if (!browser) return url;
     try {
         const parsed = new URL(url);
-        if (parsed.pathname === '/tunnel') {
-            return `${window.location.origin}${parsed.pathname}${parsed.search}`;
+        const path = parsed.pathname.replace(/\/+$/, '') || '/';
+        const isTunnelPath = path === '/tunnel';
+        if (
+            isTunnelPath
+            && loopbackHosts.has(parsed.hostname.toLowerCase())
+        ) {
+            return `${window.location.origin}/tunnel${parsed.search}`;
         }
     } catch { /* not a valid URL, return as-is */ }
     return url;
