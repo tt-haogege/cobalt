@@ -17,6 +17,9 @@ const request = async () => {
     const response: CobaltServerInfoResponse = await fetch(apiEndpoint, {
         redirect: "manual",
         signal: AbortSignal.timeout(10000),
+        headers: {
+            Accept: "application/json",
+        },
     })
     .then(r => r.json())
     .catch((e) => {
